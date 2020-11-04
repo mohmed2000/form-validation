@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/****************************/
+/********SignUp**************/
+/****************************/
+/* SignUp Lift-side */
+div.SignUp{
+    display: flex;
+    flex-flow: row;
+}
+div.left{
+    max-width: 45%;
+    position: relative;
+    height: 100vh;
+}
+img.hand{
+    width: 100%;
+    height: 100%;
+}
+div.content{
+    padding: 40px 60px;
+
+    background-color: #1566d8b9;
+    background-size: contain;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+/* logo */
+div.Wlogo{
+    margin-bottom: 100px;
+}
+/*SignUp quote */
+div.textUp p{
+    color: #fff;
+    padding-top: 10px;
+    margin-bottom: 70px;
+}
+
+div.textUp img{
+    position: relative;
+    left: 90%;
+}
+
+/* SignUp Right-side */
+div.right{
+    width: 55%;
+    position: relative;
+    height: 100vh;
+}
+/* back */
+div.back{
+    padding: 0px 60px;
+}
+div.bIcon{
+    color: gray;
+}
+button.bBtn{
+    color: gray;
+    background-color: transparent;
+    border: 0;
+}
+/* FORM */
+div.form{
+    padding: 35px 100px;
+}
+/* Typography */
+p.sub-title{
+    color: rgb(172, 172, 172);
+    padding-top: 10px;
+    margin-bottom: 20px;
+    max-width: 320px;
+}
+/* Input */
+div.label{
+    color: #696F79;
+    padding: 5px 0;
+}
+input.input{
+    padding: 12px 100px 8px 15px;
+    margin: 4px 0;
+    border-radius: 4px;
+    border: 1px solid #696F79 ;
+}
+/* Button */
+button.btn1{
+    margin-top: 7px;
+    margin-bottom: 15px;
+    background-color: #1565D8;
+    color: #fff;
+    padding: 12px 95px ;
+    border-radius: 4px;
+    border: 0;
+}
+button.btn2{
+    margin-top: 15px;
+    position: relative;
+    color: #000;
+    background-color: #fff;
+    padding: 10px 85px ;
+    border-radius: 4px;
+    border: 0;
+    box-shadow: rgba(165, 165, 165, 0.363) 3px 3px;
+}
+span.orText{
+position: relative;
+left: 25%;
+color: rgba(173, 173, 173, 0.815) ;
+
+}
+span.orText::before{
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    top: 50%;
+    left: 180%;
+    background-color: rgba(209, 207, 207, 0.294);
+
+}
+span.orText::after{
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 2px;
+    top: 50%;
+    right: 180%;
+    background-color: rgba(209, 207, 207, 0.294);
+
+}
+img.googleBtn{
+    position: absolute;
+    left: 7%;
+    top: 10%;
+}

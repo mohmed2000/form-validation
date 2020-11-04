@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.error{
+    color: red;
+}
+/****************************/
+/********SignIn**************/
+/****************************/
+/* SignUp Lift-side */
+div.SignIn{
+    display: flex;
+    flex-flow: row;
+}
+/*SignIn quote */
+div.textIn p{
+    color: #777;
+    padding-top: 10px;
+    margin-bottom: 70px;
+}
+div.textIn img{
+    width: 40%;
+    height: 30%;
+    position: relative;
+    left: 25%;
+}
+div.SignIn{
+padding: 25px;
+}
+div.icons{
+display: flex;
+flex-flow: row;
+}
+div.SignIn-left{
+    max-width: 45%;
+    position: relative;
+    height: 90vh;
+}
+div.SignIn-right{
+    max-width: 55%;
+    position: relative;
+    height: 90vh;
+    margin-top: 70px;
+}
+div.icon{
+    padding: 0 20px;
+
+}
+div.right{
+    margin: 100px 0 0 50px;
+}
