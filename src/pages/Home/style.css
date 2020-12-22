@@ -1,28 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.loginLink{
-    color: #aaa!important;
-    text-decoration: none;
-}
-.navbar{
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin-bottom: 10px;
-}
-.navbar li{
-    color: rgb(16, 35, 212)
-}
-.navbar li a{
-text-decoration: none;
-color: rgb(16, 35, 212);
-padding: 10px;
-font-size: 18px;
-font-weight: 600;
-}
 
 .error{
     color: red;
@@ -68,4 +43,7 @@ div.SignIn-right{
 div.icon{
     padding: 0 20px;
 
+}
+div.right{
+    margin: 100px 0 0 50px;
 }

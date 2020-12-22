@@ -7,15 +7,16 @@ import Qimg2 from '../../img/toy.png'
 import Form from './Form'
 import "./style.css"
 function index(props) {
+    const{handleLogeIn}=props
     return (
         //hello world
         <div className="SignIn" id="SignIn">
             <div className="SignIn-left">
-            <Logo logo={logo}/>
+            <Logo className="logoIn" logo={logo}/>
             <Quote className="textIn" Qimg={Qimg} Qimg2={Qimg2}/>
             </div>
             <div className="SignIn-right">
-            <Form />
+            <Form handleLogeIn={handleLogeIn}/>
             </div>
         </div>
     )
