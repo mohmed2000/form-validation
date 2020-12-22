@@ -11,6 +11,9 @@ div.SignUp{
     display: flex;
     flex-flow: row;
 }
+.logout{
+    display: none;
+}
 div.left{
     max-width: 45%;
     position: relative;

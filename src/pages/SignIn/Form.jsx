@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import {Link,withRouter} from 'react-router-dom'
+
+import axios from "axios"
 import * as yup from "yup"
 import Typography from '../../component/Typography'
 import Icon from '../../component/Icon'
@@ -8,7 +10,7 @@ import Button from '../../component/Button'
 import "./style.css"
 
  class Form extends Component {
-    state={email:"",Password:"",errors:{},}
+    state={email:"",password:"",errors:{},error:""}
     Rechange=(e)=>{
         const{name,value,}=e.target
         this.setState=({[name]:value})
@@ -19,31 +21,51 @@ import "./style.css"
          this.setState({[name]:value})
      }
     
-
+      goHome=(e)=> {
+        this.props.history.push("/home")
+     }
     handleSubmit=(e)=>{
          e.preventDefault();
-        const{email,Password,}=this.state
+        const{email,password,error}=this.state
         const SignInSchema = yup.object().shape({
             email:yup.string().required().email(),
-            Password:yup.string().required(),
+            password:yup.string().required(),
         })
-        SignInSchema.validate({email,Password,},{abortEarly:false})
+        SignInSchema.validate({email,password,},{abortEarly:false})
         .then(() => { 
             const errors={};
-            this.setState({errors});
+            this.setState({errors,error:""});
         })
         .catch((err)=>{
            const errors={};
            err.inner.forEach(({message,params}) => {
                errors[params.path]=message;
            });
-           this.setState({errors});
+           this.setState({errors,error:"check the filed above"});
         });
+        if(!error){
+            axios.post("https://fake-api-ahmed.herokuapp.com/v1/auth/login",
+            {email,password,})
+            .then((res)=>{
+                const user =res.data
+                console.log(user)
+                this.props.handleLogeIn();  
+                this.goHome();             
+            })
 
+            .catch((err)=>{
+                let error=err.response.data.error
+                if (error.includes("duplicate")){
+                    error = "email is already exists"
+                }
+                this.setState({error : error})
+                 // this.setState({error }) بنفع هيك برضو 
+            });
+        }
     }
 
 render() {
-    const{email,Password,errors}=this.state
+    const{email,password,errors,error}=this.state
     return (
         <div className="SignIn-form">
             <Typography title="Join the game!" subTittle="Go inside the best gamers social network!"/>
@@ -55,12 +77,13 @@ render() {
                 htmlFor="email" type="email" name="email" 
                 id="email" error={errors.email}/>
 
-                <Input value={Password} Rechange={this.Rechange}
-                label="Your password" placeholder="Enter Password"
-                htmlFor="Password" type="Password" name="Password"
-                id="Password" error={errors.Password}/>
+                <Input value={password} Rechange={this.Rechange}
+                label="Your password" placeholder="Enter password"
+                htmlFor="password" type="password" name="password"
+                id="password" error={errors.password}/>
 
-            <Button  className="btn1" text="Sign IN" />
+            <Button className="btn1" text="Sign IN" />
+            {error&&<div>{error}</div>}            
             <span className="orText">are you new in our site?<Link to="/SignUp">Register</Link> </span>
             </form>
         </div>
@@ -68,4 +91,4 @@ render() {
         }
 }
 
-export default Form
+export default withRouter(Form)

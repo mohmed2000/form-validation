@@ -3,3 +3,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+.logoUp{
+    width: 150px;
+    height: 150px;
+}
+.logoIn{
+    width: 290px;
+    height: 130px;
+    padding-bottom: 15px;
+}

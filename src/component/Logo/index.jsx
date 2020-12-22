@@ -1,9 +1,9 @@
 import React from 'react'
 function Logo(props) {
-    const{logo}=props
+    const{logo,className}=props
     return (
         <div>
-            <img src={logo} alt="logo"/>
+            <img className={className} src={logo} alt="logo"/>
         </div>
     )
 }

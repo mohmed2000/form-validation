@@ -14,13 +14,12 @@ function SignUp(props) {
             <div className="left">
                 <img className="hand" src={hand} alt="" />
                 <div className="content">
-                <div className="Wlogo"><Logo logo={logo}/></div>
+                <div className="Wlogo"><Logo className="logoUp" logo={logo}/></div>
                 <Quote className="textUp" Qimg={Qimg} Qimg2={Qimg2}/>
                 </div>
             </div>
             <div className="right">
                 <div className="back">
-                <Back/>
                 </div>
             <Form/>
             </div>
