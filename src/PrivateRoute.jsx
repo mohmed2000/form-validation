@@ -6,7 +6,7 @@ function PrivateRoute({isLogeIn,children,...props}) {
         // لازم كلمة children محجوزة انه كل اشي بين فتحة التاغ اسمه شيلدرن
         <Route {...props}>
         {isLogeIn? children : <Redirect to="/" />}
-        {!isLogeIn&&alert("you should signIn first")}
+        {isLogeIn===false }
       </Route>
     )
 }

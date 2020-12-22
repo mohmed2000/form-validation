@@ -36,7 +36,7 @@ class App extends Component {
             </Route>
             <PrivateRoute isLogeIn={isLogeIn} exact path="/home">
             <button className={this.isLogeIn===false && "logout"}
-          onClick={this.handleLogeOut}>LogeOut</button>
+          onClick={this.handleLogeOut}><Link to="/">LogeOut</Link></button>
                <Home/>
             </PrivateRoute>
             {/* <Route exact path="/home">
