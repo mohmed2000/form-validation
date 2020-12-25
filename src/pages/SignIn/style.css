@@ -3,6 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+.SignIn-right{
+}
+.gif{
+    width: 500px;
+    max-height: 400px;
+    margin-right: 100px;
+    margin-top: 20px;
+
+}
 .loginLink{
     color: #aaa!important;
     text-decoration: none;
