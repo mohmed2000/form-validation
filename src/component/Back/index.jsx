@@ -16,6 +16,8 @@
 import {useReducer} from 'react'
 import axios from 'axios'
 export default function Menu() {
+
+
     const[state,dispatch]=useReducer(reducer,"hello")
     function reducer(state,action) {
         if(action.type==="loading"){
@@ -38,11 +40,13 @@ export default function Menu() {
     }
     function randomGif(e) {
         fetchData()
+        
+        // giphy.fech()
     }
     return (
         <div>
             <button onClick={randomGif}>random gif</button>
-            {state.loading&&"loading...."}
+            {state.loading&&" loading.... "}
             {state.data && <div><img src={state.data.data.images.original.url} alt="vv"/></div>}
 
         </div>
